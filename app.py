@@ -16,6 +16,7 @@ FOODS = {
     "Mozzarella": {"kcal": 2.54, "protein": 0.180, "fat": 0.190, "carbs": 0.020},
     "Ser kozi twardy": {"kcal": 3.64, "protein": 0.220, "fat": 0.300, "carbs": 0.020},
     "Ryż jaśminowy suchy": {"kcal": 3.56, "protein": 0.070, "fat": 0.006, "carbs": 0.790},
+    "Ryż basmati biały": {"kcal": 3.50, "protein": 0.074, "fat": 0.006 , "carbs": 0.780},
     "Kasza gryczana sucha": {"kcal": 3.43, "protein": 0.130, "fat": 0.034, "carbs": 0.710},
     "Makaron żytni suchy": {"kcal": 3.40, "protein": 0.120, "fat": 0.020, "carbs": 0.680},
     "Płatki owsiane": {"kcal": 3.79, "protein": 0.130, "fat": 0.069, "carbs": 0.670},
@@ -37,8 +38,6 @@ FOODS = {
     "Ser feta": {"kcal": 2.65, "protein": 0.140, "fat": 0.210, "carbs": 0.040},
     "Parmezan": {"kcal": 4.31, "protein": 0.380, "fat": 0.290, "carbs": 0.040},
     "Pecorino": {"kcal": 3.87, "protein": 0.280, "fat": 0.310, "carbs": 0.030},
-    
-    # Nowo dodane produkty
     "Szynka": {"kcal": 1.18, "protein": 0.215, "fat": 0.035, "carbs": 0.005},
     "Cebula": {"kcal": 0.40, "protein": 0.011, "fat": 0.001, "carbs": 0.093},
     "Czosnek": {"kcal": 1.49, "protein": 0.064, "fat": 0.005, "carbs": 0.330},
@@ -50,7 +49,7 @@ FOODS = {
     "Orzechy brazylijskie": {"kcal": 6.59, "protein": 0.143, "fat": 0.671, "carbs": 0.123},
     "Orzechy nerkowca": {"kcal": 5.53, "protein": 0.182, "fat": 0.438, "carbs": 0.302},
     "Ostropest": {"kcal": 3.71, "protein": 0.160, "fat": 0.230, "carbs": 0.013},
-    "Pestki dyni"] = {"kcal": 5.59, "protein": 0.302, "fat": 0.490, "carbs": 0.107},
+    "Pestki dyni": {"kcal": 5.59, "protein": 0.302, "fat": 0.490, "carbs": 0.107},
     "Odżywka białkowa": {"kcal": 4.00, "protein": 0.900, "fat": 0.060, "carbs": 0.070}
 }
 
