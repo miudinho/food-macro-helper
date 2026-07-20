@@ -4,6 +4,7 @@ import pandas as pd
 st.set_page_config(page_title="Macro Day Tracker", layout="wide")
 
 FOODS = {
+    # Produkty bazowe
     "Jajko całe": {"kcal": 1.43, "protein": 0.126, "fat": 0.095, "carbs": 0.011},
     "Pierś z kurczaka": {"kcal": 1.20, "protein": 0.230, "fat": 0.026, "carbs": 0.000},
     "Indyk": {"kcal": 1.14, "protein": 0.240, "fat": 0.015, "carbs": 0.000},
@@ -36,6 +37,20 @@ FOODS = {
     "Ser feta": {"kcal": 2.65, "protein": 0.140, "fat": 0.210, "carbs": 0.040},
     "Parmezan": {"kcal": 4.31, "protein": 0.380, "fat": 0.290, "carbs": 0.040},
     "Pecorino": {"kcal": 3.87, "protein": 0.280, "fat": 0.310, "carbs": 0.030},
+    
+    # Nowo dodane produkty
+    "Szynka": {"kcal": 1.18, "protein": 0.215, "fat": 0.035, "carbs": 0.005},
+    "Cebula": {"kcal": 0.40, "protein": 0.011, "fat": 0.001, "carbs": 0.093},
+    "Czosnek": {"kcal": 1.49, "protein": 0.064, "fat": 0.005, "carbs": 0.330},
+    "Pomidory": {"kcal": 0.18, "protein": 0.009, "fat": 0.002, "carbs": 0.039},
+    "Bób": {"kcal": 0.88, "protein": 0.071, "fat": 0.004, "carbs": 0.176},
+    "Borówka leśna": {"kcal": 0.44, "protein": 0.007, "fat": 0.006, "carbs": 0.115},
+    "Malina": {"kcal": 0.52, "protein": 0.012, "fat": 0.0065, "carbs": 0.119},
+    "Jabłko Ligol": {"kcal": 0.52, "protein": 0.003, "fat": 0.002, "carbs": 0.138},
+    "Orzechy brazylijskie": {"kcal": 6.59, "protein": 0.143, "fat": 0.671, "carbs": 0.123},
+    "Orzechy nerkowca": {"kcal": 5.53, "protein": 0.182, "fat": 0.438, "carbs": 0.302},
+    "Ostropest": {"kcal": 3.71, "protein": 0.160, "fat": 0.230, "carbs": 0.013},
+    "Odżywka białkowa": {"kcal": 4.00, "protein": 0.900, "fat": 0.060, "carbs": 0.070}
 }
 
 DAY_MODES = {
@@ -44,7 +59,7 @@ DAY_MODES = {
 }
 
 st.title("Low-carb / IF Macro Tracker")
-st.caption("Licznik makroskładników per dzień, liczony na 1 gram produktu, z suwakiem i przyciskami +/-.")
+st.caption("Licznik makroskładników z możliwością wpisania gramatury z palca oraz przyciskami +/- 10 g.")
 
 mode = st.radio("Tryb dnia", list(DAY_MODES.keys()), horizontal=True)
 target = DAY_MODES[mode]
@@ -52,7 +67,7 @@ target = DAY_MODES[mode]
 with st.sidebar:
     st.header("Kalibracja celu")
     current_carbs = st.slider("Obecne spożycie węgli [g/dzień]", min_value=120, max_value=300, value=250, step=10)
-    target_carbs = st.slider("Docelowe węglowodany [g/dzień]", min_value=80, max_value=180, value=target["carbs"], step=5)
+    target_carbs = st.slider("Docelowe węglowodany [g/dzień]", min_value=100, max_value=180, value=target["carbs"], step=5)
     carb_drop = max(0, current_carbs - target_carbs)
     kcal_to_replace = carb_drop * 4
     st.metric("Redukcja węgli", f"{carb_drop} g")
@@ -75,28 +90,34 @@ selected = st.multiselect(
     default=["Jajko całe", "Pierś z kurczaka", "Ryż jaśminowy suchy", "Awokado", "Oliwa z oliwek"]
 )
 
-# Callback modyfikujący bezpośrednio klucz suwaka w session_state
-def adjust_grams(slider_key, delta):
-    current = st.session_state.get(slider_key, 0)
-    st.session_state[slider_key] = max(0, min(500, current + delta))
+# Callback bezpośrednio aktualizujący wartość w session_state przypisaną do widgetu
+def adjust_grams(key, delta):
+    current = st.session_state.get(key, 0)
+    st.session_state[key] = max(0, min(1000, current + delta))
 
 amounts = {}
 for food in selected:
-    slider_key = f"slider_{food}"
+    input_key = f"input_{food}"
     
-    # Inicjalizacja klucza suwaka, jeśli jeszcze nie istnieje w session_state
-    if slider_key not in st.session_state:
-        st.session_state[slider_key] = 0
+    if input_key not in st.session_state:
+        st.session_state[input_key] = 0
 
-    c1, c2, c3 = st.columns([6, 3, 2])
+    c1, c2, c3 = st.columns([6, 2, 2])
     
-    # Przyciski zmieniają wartość klucza PRZED wyrenderowaniem suwaka
-    c2.button(f"-10 g {food}", key=f"minus_{food}", on_click=adjust_grams, args=(slider_key, -10))
-    c3.button(f"+10 g {food}", key=f"plus_{food}", on_click=adjust_grams, args=(slider_key, 10))
+    # Pole numeryczne — pozwala wpisać z palca oraz ma fabryczne strzałki krokowe
+    c1.number_input(
+        f"{food} [g]", 
+        min_value=0, 
+        max_value=1000, 
+        step=1,
+        key=input_key
+    )
     
-    # Suwak korzysta z tego samego klucza
-    amt = c1.slider(f"{food} [g]", min_value=0, max_value=500, key=slider_key)
-    amounts[food] = amt
+    # Dedykowane przyciski skokowe +/- 10g
+    c2.button("-10 g", key=f"minus_{food}", on_click=adjust_grams, args=(input_key, -10))
+    c3.button("+10 g", key=f"plus_{food}", on_click=adjust_grams, args=(input_key, 10))
+    
+    amounts[food] = st.session_state[input_key]
 
 rows = []
 totals = {"kcal": 0.0, "protein": 0.0, "fat": 0.0, "carbs": 0.0}
