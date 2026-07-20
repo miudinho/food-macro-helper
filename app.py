@@ -50,6 +50,7 @@ FOODS = {
     "Orzechy brazylijskie": {"kcal": 6.59, "protein": 0.143, "fat": 0.671, "carbs": 0.123},
     "Orzechy nerkowca": {"kcal": 5.53, "protein": 0.182, "fat": 0.438, "carbs": 0.302},
     "Ostropest": {"kcal": 3.71, "protein": 0.160, "fat": 0.230, "carbs": 0.013},
+    "Pestki dyni"] = {"kcal": 5.59, "protein": 0.302, "fat": 0.490, "carbs": 0.107},
     "Odżywka białkowa": {"kcal": 4.00, "protein": 0.900, "fat": 0.060, "carbs": 0.070}
 }
 
