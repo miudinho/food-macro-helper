@@ -52,9 +52,9 @@ FOODS = {
 
     # Cały kompleks B (zwłaszcza B12 i B2), znaczne ilości wapnia (approx. 80mg/100g), fosforu i selenu.
     "Biały ser tłusty": {"kcal": 1.75, "protein": 0.170, "fat": 0.120, "carbs": 0.030},
-
-    # Obfite źródło folianów (B9 - approx. 420mcg/100g), potasu, magnezu, żelaza i miedzi.
-    "Bób": {"kcal": 0.88, "protein": 0.071, "fat": 0.004, "carbs": 0.176},
+   
+    # Bardzo dobre źródło białka roślinnego, błonnika, folianów (B9), potasu, magnezu i żelaza.
+    "Bób ugotowany": {"kcal": 1.10, "protein": 0.076, "fat": 0.004, "carbs": 0.197},
 
     # Wybitne źródło antocyjanów, witaminy C, witaminy K (approx. 19mcg/100g) oraz manganu.
     "Borówka leśna": {"kcal": 0.57, "protein": 0.007, "fat": 0.003, "carbs": 0.145},
