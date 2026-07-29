@@ -1,0 +1,466 @@
+{
+  "Awokado": {
+    "kcal": 1.6,
+    "protein": 0.02,
+    "fat": 0.15,
+    "carbs": 0.09,
+    "sat_fat": 0.021,
+    "unsat_fat": 0.126
+  },
+  "Biały ser tłusty": {
+    "kcal": 1.75,
+    "protein": 0.17,
+    "fat": 0.12,
+    "carbs": 0.03,
+    "sat_fat": 0.076,
+    "unsat_fat": 0.038
+  },
+  "Bób ugotowany": {
+    "kcal": 0.88,
+    "protein": 0.076,
+    "fat": 0.004,
+    "carbs": 0.18,
+    "sat_fat": 0.001,
+    "unsat_fat": 0.003
+  },
+  "Boczek pieczony": {
+    "kcal": 4.5,
+    "protein": 0.14,
+    "fat": 0.44,
+    "carbs": 0.01,
+    "sat_fat": 0.155,
+    "unsat_fat": 0.268
+  },
+  "Borówka leśna": {
+    "kcal": 0.57,
+    "protein": 0.007,
+    "fat": 0.003,
+    "carbs": 0.145,
+    "sat_fat": 0.0,
+    "unsat_fat": 0.002
+  },
+  "Brokuł": {
+    "kcal": 0.35,
+    "protein": 0.028,
+    "fat": 0.004,
+    "carbs": 0.07,
+    "sat_fat": 0.0,
+    "unsat_fat": 0.003
+  },
+  "Cebula": {
+    "kcal": 0.4,
+    "protein": 0.011,
+    "fat": 0.001,
+    "carbs": 0.093,
+    "sat_fat": 0.0,
+    "unsat_fat": 0.0
+  },
+  "Chleb żytni": {
+    "kcal": 2.3,
+    "protein": 0.07,
+    "fat": 0.015,
+    "carbs": 0.46,
+    "sat_fat": 0.002,
+    "unsat_fat": 0.011
+  },
+  "Cukinia": {
+    "kcal": 0.17,
+    "protein": 0.012,
+    "fat": 0.003,
+    "carbs": 0.031,
+    "sat_fat": 0.001,
+    "unsat_fat": 0.002
+  },
+  "Czosnek": {
+    "kcal": 1.49,
+    "protein": 0.064,
+    "fat": 0.005,
+    "carbs": 0.33,
+    "sat_fat": 0.001,
+    "unsat_fat": 0.003
+  },
+  "Dorsz": {
+    "kcal": 0.82,
+    "protein": 0.18,
+    "fat": 0.007,
+    "carbs": 0.0,
+    "sat_fat": 0.001,
+    "unsat_fat": 0.002
+  },
+  "Fasolka szparagowa ugotowana": {
+    "kcal": 0.35,
+    "protein": 0.018,
+    "fat": 0.001,
+    "carbs": 0.08,
+    "sat_fat": 0.0,
+    "unsat_fat": 0.001
+  },
+  "Filet z indyka": {
+    "kcal": 1.14,
+    "protein": 0.24,
+    "fat": 0.015,
+    "carbs": 0.0,
+    "sat_fat": 0.004,
+    "unsat_fat": 0.01
+  },
+  "Filet z sandacza": {
+    "kcal": 0.93,
+    "protein": 0.19,
+    "fat": 0.02,
+    "carbs": 0.0,
+    "sat_fat": 0.005,
+    "unsat_fat": 0.014
+  },
+  "Jabłko Ligol": {
+    "kcal": 0.52,
+    "protein": 0.003,
+    "fat": 0.002,
+    "carbs": 0.14,
+    "sat_fat": 0.0,
+    "unsat_fat": 0.001
+  },
+  "Jajko całe": {
+    "kcal": 1.43,
+    "protein": 0.126,
+    "fat": 0.095,
+    "carbs": 0.011,
+    "sat_fat": 0.032,
+    "unsat_fat": 0.058
+  },
+  "Jajko na twardo": {
+    "kcal": 1.55,
+    "protein": 0.126,
+    "fat": 0.106,
+    "carbs": 0.011,
+    "sat_fat": 0.033,
+    "unsat_fat": 0.066
+  },
+  "Kasza gryczana sucha": {
+    "kcal": 3.43,
+    "protein": 0.13,
+    "fat": 0.034,
+    "carbs": 0.71,
+    "sat_fat": 0.007,
+    "unsat_fat": 0.023
+  },
+  "Kasza jaglana": {
+    "kcal": 3.78,
+    "protein": 0.11,
+    "fat": 0.042,
+    "carbs": 0.729,
+    "sat_fat": 0.007,
+    "unsat_fat": 0.033
+  },
+  "Kasza jęczmienna pęczak": {
+    "kcal": 3.52,
+    "protein": 0.098,
+    "fat": 0.021,
+    "carbs": 0.735,
+    "sat_fat": 0.004,
+    "unsat_fat": 0.014
+  },
+  "Kefir naturalny": {
+    "kcal": 0.51,
+    "protein": 0.034,
+    "fat": 0.02,
+    "carbs": 0.049,
+    "sat_fat": 0.013,
+    "unsat_fat": 0.006
+  },
+  "Łosoś": {
+    "kcal": 2.08,
+    "protein": 0.2,
+    "fat": 0.13,
+    "carbs": 0.0,
+    "sat_fat": 0.031,
+    "unsat_fat": 0.07
+  },
+  "Łosoś pieczony": {
+    "kcal": 2.21,
+    "protein": 0.22,
+    "fat": 0.145,
+    "carbs": 0.0,
+    "sat_fat": 0.033,
+    "unsat_fat": 0.084
+  },
+  "Łosoś wędzony": {
+    "kcal": 1.17,
+    "protein": 0.183,
+    "fat": 0.043,
+    "carbs": 0.0,
+    "sat_fat": 0.01,
+    "unsat_fat": 0.024
+  },
+  "Makaron żytni suchy": {
+    "kcal": 3.4,
+    "protein": 0.12,
+    "fat": 0.02,
+    "carbs": 0.68,
+    "sat_fat": 0.003,
+    "unsat_fat": 0.014
+  },
+  "Malina": {
+    "kcal": 0.52,
+    "protein": 0.012,
+    "fat": 0.007,
+    "carbs": 0.12,
+    "sat_fat": 0.0,
+    "unsat_fat": 0.004
+  },
+  "Masło klarowane": {
+    "kcal": 8.84,
+    "protein": 0.0,
+    "fat": 1.0,
+    "carbs": 0.0,
+    "sat_fat": 0.62,
+    "unsat_fat": 0.33
+  },
+  "Migdały": {
+    "kcal": 5.79,
+    "protein": 0.21,
+    "fat": 0.5,
+    "carbs": 0.22,
+    "sat_fat": 0.038,
+    "unsat_fat": 0.462
+  },
+  "Mozzarella": {
+    "kcal": 2.54,
+    "protein": 0.18,
+    "fat": 0.19,
+    "carbs": 0.02,
+    "sat_fat": 0.118,
+    "unsat_fat": 0.054
+  },
+  "Mozzarella light": {
+    "kcal": 1.8,
+    "protein": 0.24,
+    "fat": 0.1,
+    "carbs": 0.03,
+    "sat_fat": 0.063,
+    "unsat_fat": 0.028
+  },
+  "Odżywka białkowa WPI": {
+    "kcal": 3.7,
+    "protein": 0.88,
+    "fat": 0.01,
+    "carbs": 0.02,
+    "sat_fat": 0.006,
+    "unsat_fat": 0.003
+  },
+  "Ogórek": {
+    "kcal": 0.15,
+    "protein": 0.007,
+    "fat": 0.001,
+    "carbs": 0.036,
+    "sat_fat": 0.0,
+    "unsat_fat": 0.001
+  },
+  "Olej MCT": {
+    "kcal": 8.3,
+    "protein": 0.0,
+    "fat": 0.92,
+    "carbs": 0.0,
+    "sat_fat": 0.92,
+    "unsat_fat": 0.0
+  },
+  "Oliwa z oliwek": {
+    "kcal": 8.84,
+    "protein": 0.0,
+    "fat": 1.0,
+    "carbs": 0.0,
+    "sat_fat": 0.14,
+    "unsat_fat": 0.86
+  },
+  "Oliwki": {
+    "kcal": 1.15,
+    "protein": 0.008,
+    "fat": 0.11,
+    "carbs": 0.06,
+    "sat_fat": 0.015,
+    "unsat_fat": 0.094
+  },
+  "Orzechy brazylijskie": {
+    "kcal": 6.59,
+    "protein": 0.14,
+    "fat": 0.67,
+    "carbs": 0.12,
+    "sat_fat": 0.161,
+    "unsat_fat": 0.478
+  },
+  "Orzechy nerkowca": {
+    "kcal": 5.53,
+    "protein": 0.18,
+    "fat": 0.44,
+    "carbs": 0.3,
+    "sat_fat": 0.079,
+    "unsat_fat": 0.355
+  },
+  "Orzechy włoskie": {
+    "kcal": 6.54,
+    "protein": 0.15,
+    "fat": 0.65,
+    "carbs": 0.14,
+    "sat_fat": 0.061,
+    "unsat_fat": 0.587
+  },
+  "Ostropest": {
+    "kcal": 5.61,
+    "protein": 0.2,
+    "fat": 0.35,
+    "carbs": 0.09,
+    "sat_fat": 0.033,
+    "unsat_fat": 0.289
+  },
+  "Papryka czerwona": {
+    "kcal": 0.31,
+    "protein": 0.01,
+    "fat": 0.003,
+    "carbs": 0.06,
+    "sat_fat": 0.0,
+    "unsat_fat": 0.002
+  },
+  "Parmezan": {
+    "kcal": 4.31,
+    "protein": 0.38,
+    "fat": 0.29,
+    "carbs": 0.04,
+    "sat_fat": 0.186,
+    "unsat_fat": 0.083
+  },
+  "Pecorino": {
+    "kcal": 3.87,
+    "protein": 0.28,
+    "fat": 0.31,
+    "carbs": 0.03,
+    "sat_fat": 0.195,
+    "unsat_fat": 0.094
+  },
+  "Pestki dyni lekko prażone": {
+    "kcal": 5.59,
+    "protein": 0.302,
+    "fat": 0.49,
+    "carbs": 0.107,
+    "sat_fat": 0.087,
+    "unsat_fat": 0.398
+  },
+  "Pierś z kurczaka": {
+    "kcal": 1.2,
+    "protein": 0.23,
+    "fat": 0.026,
+    "carbs": 0.0,
+    "sat_fat": 0.007,
+    "unsat_fat": 0.012
+  },
+  "Płatki owsiane": {
+    "kcal": 3.79,
+    "protein": 0.13,
+    "fat": 0.069,
+    "carbs": 0.67,
+    "sat_fat": 0.012,
+    "unsat_fat": 0.056
+  },
+  "Pomidory": {
+    "kcal": 0.18,
+    "protein": 0.009,
+    "fat": 0.002,
+    "carbs": 0.039,
+    "sat_fat": 0.0,
+    "unsat_fat": 0.001
+  },
+  "Ryż basmati biały": {
+    "kcal": 3.5,
+    "protein": 0.074,
+    "fat": 0.006,
+    "carbs": 0.78,
+    "sat_fat": 0.002,
+    "unsat_fat": 0.004
+  },
+  "Ryż jaśminowy suchy": {
+    "kcal": 3.56,
+    "protein": 0.07,
+    "fat": 0.006,
+    "carbs": 0.79,
+    "sat_fat": 0.002,
+    "unsat_fat": 0.004
+  },
+  "Ser feta": {
+    "kcal": 2.65,
+    "protein": 0.14,
+    "fat": 0.21,
+    "carbs": 0.04,
+    "sat_fat": 0.146,
+    "unsat_fat": 0.046
+  },
+  "Ser kozi twardy": {
+    "kcal": 3.64,
+    "protein": 0.22,
+    "fat": 0.3,
+    "carbs": 0.02,
+    "sat_fat": 0.19,
+    "unsat_fat": 0.09
+  },
+  "Siemię lniane": {
+    "kcal": 5.34,
+    "protein": 0.18,
+    "fat": 0.42,
+    "carbs": 0.29,
+    "sat_fat": 0.037,
+    "unsat_fat": 0.384
+  },
+  "Skyr naturalny": {
+    "kcal": 0.63,
+    "protein": 0.11,
+    "fat": 0.002,
+    "carbs": 0.04,
+    "sat_fat": 0.001,
+    "unsat_fat": 0.001
+  },
+  "Szpinak": {
+    "kcal": 0.23,
+    "protein": 0.029,
+    "fat": 0.004,
+    "carbs": 0.036,
+    "sat_fat": 0.001,
+    "unsat_fat": 0.002
+  },
+  "Szynka": {
+    "kcal": 1.2,
+    "protein": 0.2,
+    "fat": 0.04,
+    "carbs": 0.015,
+    "sat_fat": 0.014,
+    "unsat_fat": 0.022
+  },
+  "Twaróg półtłusty": {
+    "kcal": 1.33,
+    "protein": 0.19,
+    "fat": 0.05,
+    "carbs": 0.035,
+    "sat_fat": 0.032,
+    "unsat_fat": 0.016
+  },
+  "Wieprzowina mielona": {
+    "kcal": 2.63,
+    "protein": 0.169,
+    "fat": 0.211,
+    "carbs": 0.0,
+    "sat_fat": 0.077,
+    "unsat_fat": 0.123
+  },
+  "Wołowina chuda": {
+    "kcal": 1.55,
+    "protein": 0.21,
+    "fat": 0.075,
+    "carbs": 0.0,
+    "sat_fat": 0.03,
+    "unsat_fat": 0.041
+  },
+  "Wołowina mielona": {
+    "kcal": 2.15,
+    "protein": 0.186,
+    "fat": 0.15,
+    "carbs": 0.0,
+    "sat_fat": 0.06,
+    "unsat_fat": 0.078
+  }
+}

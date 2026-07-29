@@ -1,0 +1,20 @@
+{
+  "selected_products": [
+    "Boczek pieczony",
+    "Wołowina mielona",
+    "Skyr naturalny",
+    "Ryż basmati biały",
+    "Olej MCT",
+    "Masło klarowane",
+    "Jajko na twardo"
+  ],
+  "amounts": {
+    "Boczek pieczony": 50,
+    "Wołowina mielona": 300,
+    "Skyr naturalny": 150,
+    "Ryż basmati biały": 150,
+    "Olej MCT": 5,
+    "Masło klarowane": 5,
+    "Jajko na twardo": 180
+  }
+}
