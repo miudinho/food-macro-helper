@@ -63,6 +63,14 @@
     "sat_fat": 0.002,
     "unsat_fat": 0.011
   },
+  "Ciecierzyca sucha": {
+    "kcal": 3.64,
+    "protein": 0.193,
+    "fat": 0.060,
+    "sat_fat": 0.006,
+    "unsat_fat": 0.054,
+    "carbs": 0.607
+    },
   "Cukinia": {
     "kcal": 0.17,
     "protein": 0.012,
@@ -87,6 +95,23 @@
     "sat_fat": 0.001,
     "unsat_fat": 0.002
   },
+  "Dynia, pestki lekko prażone": {
+    "kcal": 5.59,
+    "protein": 0.302,
+    "fat": 0.49,
+    "carbs": 0.107,
+    "sat_fat": 0.087,
+    "unsat_fat": 0.398
+  },
+  "Dynia, łuskana": {
+    "kcal": 5.56,
+    "protein": 0.245,
+    "fat": 0.458,
+    "sat_fat": 0.086,
+    "unsat_fat": 0.373,
+    "carbs": 0.18
+    },
+
   "Fasolka szparagowa ugotowana": {
     "kcal": 0.35,
     "protein": 0.018,
@@ -159,6 +184,14 @@
     "sat_fat": 0.004,
     "unsat_fat": 0.014
   },
+  "Kaszanka grillowana": {
+        "kcal": 2.50,
+        "protein": 0.110,
+        "fat": 0.180,
+        "sat_fat": 0.068,
+        "unsat_fat": 0.112,
+        "carbs": 0.130
+    },
   "Kefir naturalny": {
     "kcal": 0.51,
     "protein": 0.034,
@@ -167,6 +200,14 @@
     "sat_fat": 0.013,
     "unsat_fat": 0.006
   },
+  "Kokosowy Krem Kara (24% tłuszczu)": {
+        "kcal": 2.44,
+        "protein": 0.027,
+        "fat": 0.240,
+        "sat_fat": 0.23,
+        "unsat_fat": 0.024,
+        "carbs": 0.044
+    },
   "Łosoś": {
     "kcal": 2.08,
     "protein": 0.2,
@@ -198,6 +239,14 @@
     "carbs": 0.68,
     "sat_fat": 0.003,
     "unsat_fat": 0.014
+  },
+  "Makrela wędzona": {
+        "kcal": 2.21,
+        "protein": 0.207,
+        "fat": 0.155,
+        "sat_fat": 0.033,
+        "unsat_fat": 0.122,
+        "carbs": 0.000
   },
   "Malina": {
     "kcal": 0.52,
@@ -334,14 +383,6 @@
     "carbs": 0.03,
     "sat_fat": 0.195,
     "unsat_fat": 0.094
-  },
-  "Pestki dyni lekko prażone": {
-    "kcal": 5.59,
-    "protein": 0.302,
-    "fat": 0.49,
-    "carbs": 0.107,
-    "sat_fat": 0.087,
-    "unsat_fat": 0.398
   },
   "Pierś z kurczaka": {
     "kcal": 1.2,

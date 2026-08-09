@@ -1,20 +1,26 @@
 {
   "selected_products": [
-    "Boczek pieczony",
-    "Wołowina mielona",
-    "Skyr naturalny",
-    "Ryż basmati biały",
-    "Olej MCT",
+    "Ciecierzyca sucha",
+    "Dynia, łuskana",
+    "Awokado",
+    "Kokosowy Krem Kara (24% tłuszczu)",
+    "Makrela wędzona",
     "Masło klarowane",
-    "Jajko na twardo"
+    "Olej MCT",
+    "Orzechy nerkowca",
+    "Ryż basmati biały",
+    "Twaróg półtłusty"
   ],
   "amounts": {
-    "Boczek pieczony": 50,
-    "Wołowina mielona": 300,
-    "Skyr naturalny": 150,
-    "Ryż basmati biały": 150,
-    "Olej MCT": 5,
+    "Ciecierzyca sucha": 220,
+    "Dynia, łuskana": 10,
+    "Awokado": 0,
+    "Kokosowy Krem Kara (24% tłuszczu)": 200,
+    "Makrela wędzona": 100,
     "Masło klarowane": 5,
-    "Jajko na twardo": 180
+    "Olej MCT": 5,
+    "Orzechy nerkowca": 10,
+    "Ryż basmati biały": 130,
+    "Twaróg półtłusty": 150
   }
 }
