@@ -1,19 +1,20 @@
 import json
 import os
+import tempfile
 import pandas as pd
 import streamlit as st
 
 st.set_page_config(page_title="Macro Day Tracker", layout="wide")
 
 # ---------------------------------------------------------
-# MECHANIZM ZAPISU I ODCZYTU STANU (PERSISTENCE)
+# PERSISTENCE (ZAPIS POZA KATALOGIEM RENDEROWANIA APLIKACJI)
+# Zapis w tempdir chroni przed pętlą Streamlit File Watchera
 # ---------------------------------------------------------
-DATA_DIR = "data"
-CACHE_FILE = os.path.join(DATA_DIR, "user_selection.json")
+CACHE_FILE = os.path.join(tempfile.gettempdir(), "macro_user_selection.json")
 
 
 def load_saved_state():
-    """Wczytuje stan z pliku JSON przy pierwszym uruchomieniu."""
+    """Wczytuje stan z pliku tymczasowego JSON."""
     if os.path.exists(CACHE_FILE):
         try:
             with open(CACHE_FILE, "r", encoding="utf-8") as f:
@@ -24,8 +25,7 @@ def load_saved_state():
 
 
 def save_current_state():
-    """Zapisuje aktualnie wybrane produkty oraz ich gramatury do pliku JSON."""
-    os.makedirs(DATA_DIR, exist_ok=True)
+    """Zapisuje aktualny stan bez powodowania pętli re-runu serwera."""
     saved_data = {
         "selected_products": st.session_state.get("selected_products", []),
         "amounts": {
@@ -33,32 +33,34 @@ def save_current_state():
             for food in st.session_state.get("selected_products", [])
         },
     }
-    with open(CACHE_FILE, "w", encoding="utf-8") as f:
-        json.dump(saved_data, f, ensure_ascii=False, indent=2)
+    try:
+        with open(CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(saved_data, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        st.error(f"Błąd zapisu pliku stanu: {e}")
 
 
-# Inicjalizacja session_state na podstawie pliku z pamięcią
+# Inicjalizacja session_state
 if "initialized" not in st.session_state:
     saved_data = load_saved_state()
     st.session_state.selected_products = saved_data.get(
         "selected_products", []
     )
 
-    # Przywrócenie zapisanych gramatur dla produktów
     for food, grams in saved_data.get("amounts", {}).items():
         st.session_state[f"input_{food}"] = grams
 
     st.session_state.initialized = True
 
 # ---------------------------------------------------------
-# BAZA DANYCH (WCZYTYWANIE Z FOODS.JSON)
+# BAZA DANYCH (FOODS.JSON)
 # ---------------------------------------------------------
 FOODS_FILE = "foods.json"
 
 
 @st.cache_data
 def load_foods():
-    """Wczytuje bazę produktów z zewnętrznego pliku JSON."""
+    """Wczytuje bazę produktów z pliku JSON."""
     if os.path.exists(FOODS_FILE):
         try:
             with open(FOODS_FILE, "r", encoding="utf-8") as f:
@@ -75,7 +77,6 @@ FOODS = load_foods()
 
 
 def get_fat_breakdown(food_name, total_fat_g, vals, grams):
-    """Oblicza lub automatycznie szacuje SFA/UFA, jeśli w JSONie nie ma sat_fat / unsat_fat."""
     if "sat_fat" in vals and "unsat_fat" in vals:
         return vals["sat_fat"] * grams, vals["unsat_fat"] * grams
 
@@ -148,18 +149,10 @@ target = DAY_MODES[mode]
 with st.sidebar:
     st.header("Kalibracja celu")
     current_carbs = st.slider(
-        "Obecne spożycie węgli [g/dzień]",
-        min_value=120,
-        max_value=300,
-        value=250,
-        step=10,
+        "Obecne spożycie węgli [g/dzień]", 120, 300, 250, 10
     )
     target_carbs = st.slider(
-        "Docelowe węglowodany [g/dzień]",
-        min_value=100,
-        max_value=180,
-        value=target["carbs"],
-        step=5,
+        "Docelowe węglowodany [g/dzień]", 100, 180, target["carbs"], 5
     )
     carb_drop = max(0, current_carbs - target_carbs)
     kcal_to_replace = carb_drop * 4
@@ -267,7 +260,6 @@ if rows:
 
 st.subheader("Podsumowanie dnia")
 
-# Obliczanie udziału procentowego SFA i UFA
 total_fat = totals["fat"]
 if total_fat > 0:
     sat_pct = round((totals["sat_fat"] / total_fat) * 100)
@@ -301,7 +293,6 @@ summary_cols[3].metric(
     f"{totals['carbs'] - target_carbs:.1f} g",
 )
 
-# Karta szczegółowa profilu tłuszczowego
 st.markdown(
     f"**Stosunek tłuszczów w diecie:** Nasycone (SFA): **{totals['sat_fat']:.1f} g ({sat_pct}%)** | "
     f"Nienasycone (UFA): **{totals['unsat_fat']:.1f} g ({unsat_pct}%)**"
@@ -328,43 +319,3 @@ remaining = {
 }
 st.subheader("Ile jeszcze brakuje / nadwyżka")
 st.table(pd.DataFrame([remaining]))
-
-st.subheader("Sugestie podziału dnia")
-st.markdown("""
-- **08:30** – kawa kuloodporna: 10 g masła klarowanego + 10 g MCT.
-- **12:00** – posiłek wysokobiałkowy z jajkami.
-- **14:00–16:30** – obiad lub dwa mniejsze posiłki; większość węgli wokół aktywności.
-- **21:00** – kolacja / posiłek potreningowy, bogatszy w dni treningowe.
-""")
-
-st.subheader("Plan żywieniowy – skrót kliniczny")
-st.markdown("""
-### 1. Bilans i makro
-- **Dzień nietreningowy:** około 2000 kcal, ~140 g białka, ~105 g tłuszczu, ~120 g węgli.
-- **Dzień treningowy:** około 2400 kcal, ~150 g białka, ~115 g tłuszczu, ~130 g węgli.
-- Białko rozdziel na 3–4 ekspozycje po około 25–40 g pełnowartościowego białka.
-
-### 2. Tapering węglowodanów
-- Tydzień 1: bieżący poziom minus 10 g/dzień.
-- Kolejne tygodnie: obniżaj o 10 g/dzień tygodniowo aż do ~120 g w dni nietreningowe i ~130 g w treningowe.
-- Energię uzupełniaj głównie białkiem i tłuszczem, nie samym tłuszczem.
-
-### 3. Uwagi kliniczne
-- Przy IF + treningu oporowym priorytetem jest podaż białka i całkowitej energii.
-- Przy redukcji węgli pilnuj sodu, potasu i magnezu oraz odpowiedniego nawodnienia.
-- Węgle skupiaj głównie wokół obiadu i posiłku potreningowego.
-
-### 4. Suplementacja wspierająca
-- Kreatyna monohydrat: 3–5 g/dzień.
-- Magnez: zwykle 200–400 mg elementarnego/dzień, zależnie od tolerancji i podaży z diety.
-- Omega-3: jeśli mało tłustych ryb.
-- Elektrolity: szczególnie na początku zejścia z węgli.
-""")
-
-st.subheader("Lista zakupów – baza")
-st.markdown("""
-- **Białko:** jaja, kurczak, indyk, chuda wołowina, łosoś, dorsz, twaróg, skyr.
-- **Tłuszcze:** oliwa, MCT, masło klarowane, awokado, orzechy, oliwki.
-- **Węglowodany kontrolowane:** ryż jaśminowy, kasza gryczana, makaron żytni, płatki owsiane, chleb żytni.
-- **Warzywa i mikroelementy:** szpinak, brokuł, papryka, cukinia, ogórek.
-""")
