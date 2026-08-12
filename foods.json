@@ -527,5 +527,13 @@
     "carbs": 0.0,
     "sat_fat": 0.06,
     "unsat_fat": 0.078
+  },
+  "Ziemniaki pieczone": {
+        "kcal": 0.93,
+        "protein": 0.025,
+        "fat": 0.001,
+        "sat_fat": 0.000,
+        "unsat_fat": 0.001,
+        "carbs": 0.211
   }
 }
