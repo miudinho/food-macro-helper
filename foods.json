@@ -160,6 +160,14 @@
     "sat_fat": 0.033,
     "unsat_fat": 0.066
   },
+  "Kakao DecoMorreno": {
+        "kcal": 3.03,
+        "protein": 0.235,
+        "fat": 0.105,
+        "sat_fat": 0.064,
+        "unsat_fat": 0.041,
+        "carbs": 0.130
+    },
   "Kasza gryczana sucha": {
     "kcal": 3.43,
     "protein": 0.13,
@@ -432,6 +440,14 @@
     "sat_fat": 0.146,
     "unsat_fat": 0.046
   },
+  "Ser feta kozi Arvanitis": {
+        "kcal": 2.99,
+        "protein": 0.171,
+        "fat": 0.255,
+        "sat_fat": 0.139,
+        "unsat_fat": 0.116,
+        "carbs": 0.0015
+    },
   "Ser kozi twardy": {
     "kcal": 3.64,
     "protein": 0.22,
@@ -480,6 +496,14 @@
     "sat_fat": 0.032,
     "unsat_fat": 0.016
   },
+  "Twaróg tłusty Skala": {
+        "kcal": 1.75,
+        "protein": 0.150,
+        "fat": 0.120,
+        "sat_fat": 0.078,
+        "unsat_fat": 0.042,
+        "carbs": 0.035
+    },
   "Wieprzowina mielona": {
     "kcal": 2.63,
     "protein": 0.169,
