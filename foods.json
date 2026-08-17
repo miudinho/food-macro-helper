@@ -114,8 +114,8 @@
 
   "Fasolka szparagowa ugotowana": {
     "kcal": 0.35,
-    "protein": 0.018,
-    "fat": 0.001,
+    "protein": 0.020,
+    "fat": 0.002,
     "carbs": 0.08,
     "sat_fat": 0.0,
     "unsat_fat": 0.001
@@ -449,10 +449,10 @@
         "carbs": 0.0015
     },
   "Ser kozi twardy": {
-    "kcal": 3.64,
-    "protein": 0.22,
-    "fat": 0.3,
-    "carbs": 0.02,
+    "kcal": 3.67,
+    "protein": 0.21,
+    "fat": 0.31,
+    "carbs": 0.00,
     "sat_fat": 0.19,
     "unsat_fat": 0.09
   },
@@ -471,6 +471,14 @@
     "carbs": 0.04,
     "sat_fat": 0.001,
     "unsat_fat": 0.001
+  },
+  "Słonecznik łuskany": {
+  "kcal": 5.84,
+  "protein": 0.208,
+  "fat": 0.515,
+  "carbs": 0.20,
+  "sat_fat": 0.045,
+  "unsat_fat": 0.47
   },
   "Szpinak": {
     "kcal": 0.23,
