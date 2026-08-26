@@ -1,4 +1,4 @@
-{
+ {
   "Awokado": {
     "kcal": 1.6,
     "protein": 0.02,
@@ -160,6 +160,22 @@
     "sat_fat": 0.033,
     "unsat_fat": 0.066
   },
+  "Jajko w koszulce (ze ściętym żółtkiem)": {
+        "kcal": 1.43,
+        "protein": 0.126,
+        "fat": 0.095,
+        "sat_fat": 0.031,
+        "unsat_fat": 0.064,
+        "carbs": 0.007
+    },
+    "Jajko w koszulce (z płynnym żółtkiem)": {
+        "kcal": 1.43,
+        "protein": 0.126,
+        "fat": 0.095,
+        "sat_fat": 0.031,
+        "unsat_fat": 0.064,
+        "carbs": 0.007
+    },
   "Kakao DecoMorreno": {
         "kcal": 3.03,
         "protein": 0.235,
@@ -176,6 +192,14 @@
     "sat_fat": 0.007,
     "unsat_fat": 0.023
   },
+  "Kasza gryczana niepalona (biała)": {
+        "kcal": 3.43,
+        "protein": 0.126,
+        "fat": 0.031,
+        "sat_fat": 0.006,
+        "unsat_fat": 0.025,
+        "carbs": 0.634
+    },
   "Kasza jaglana": {
     "kcal": 3.78,
     "protein": 0.11,
@@ -456,6 +480,14 @@
     "sat_fat": 0.19,
     "unsat_fat": 0.09
   },
+  "Seler korzeniowy surowy": {
+        "kcal": 0.42,
+        "protein": 0.009,
+        "fat": 0.003,
+        "sat_fat": 0.001,
+        "unsat_fat": 0.002,
+        "carbs": 0.070
+    },
   "Siemię lniane": {
     "kcal": 5.34,
     "protein": 0.18,
@@ -496,6 +528,14 @@
     "sat_fat": 0.014,
     "unsat_fat": 0.022
   },
+  "Tuńczyk Rio Mare w sosie własnym (160g)": {
+        "kcal": 1.76,
+        "protein": 0.250,
+        "fat": 0.005,
+        "sat_fat": 0.002,
+        "unsat_fat": 0.003,
+        "carbs": 0.000
+    },
   "Twaróg półtłusty": {
     "kcal": 1.33,
     "protein": 0.19,
