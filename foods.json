@@ -328,14 +328,14 @@
     "sat_fat": 0.063,
     "unsat_fat": 0.028
   },
-  "Odżywka białkowa WPI": {
-    "kcal": 3.7,
-    "protein": 0.88,
-    "fat": 0.01,
-    "carbs": 0.02,
-    "sat_fat": 0.006,
-    "unsat_fat": 0.003
-  },
+  "Odżywka białkowa OLIMP Pure Whey Isolate 95": {
+  "kcal": 3.52,
+  "protein": 0.86,
+  "fat": 0.005,
+  "carbs": 0.01,
+  "sat_fat": 0.005,
+  "unsat_fat": 0.0
+}
   "Ogórek": {
     "kcal": 0.15,
     "protein": 0.007,
