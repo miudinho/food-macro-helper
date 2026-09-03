@@ -7,14 +7,6 @@
     "sat_fat": 0.021,
     "unsat_fat": 0.126
   },
-  "Biały ser tłusty": {
-    "kcal": 1.75,
-    "protein": 0.17,
-    "fat": 0.12,
-    "carbs": 0.03,
-    "sat_fat": 0.076,
-    "unsat_fat": 0.038
-  },
   "Bób ugotowany": {
     "kcal": 0.88,
     "protein": 0.076,
@@ -241,12 +233,12 @@
     "unsat_fat": 0.006
   },
   "Kokosowy Krem Kara (24% tłuszczu)": {
-        "kcal": 2.44,
-        "protein": 0.027,
-        "fat": 0.240,
-        "sat_fat": 0.23,
-        "unsat_fat": 0.024,
-        "carbs": 0.044
+    "kcal": 2.44,
+    "protein": 0.027,
+    "fat": 0.240,
+    "sat_fat": 0.23,
+    "unsat_fat": 0.024,
+    "carbs": 0.044
     },
   "Łosoś": {
     "kcal": 2.08,
@@ -281,12 +273,12 @@
     "unsat_fat": 0.014
   },
   "Makrela wędzona": {
-        "kcal": 2.21,
-        "protein": 0.207,
-        "fat": 0.155,
-        "sat_fat": 0.033,
-        "unsat_fat": 0.122,
-        "carbs": 0.000
+    "kcal": 2.21,
+    "protein": 0.207,
+    "fat": 0.155,
+    "sat_fat": 0.033,
+    "unsat_fat": 0.122,
+    "carbs": 0.000
   },
   "Malina": {
     "kcal": 0.52,
@@ -335,7 +327,7 @@
   "carbs": 0.01,
   "sat_fat": 0.005,
   "unsat_fat": 0.0
-}
+},
   "Ogórek": {
     "kcal": 0.15,
     "protein": 0.007,
@@ -479,7 +471,7 @@
         "sat_fat": 0.139,
         "unsat_fat": 0.116,
         "carbs": 0.0015
-    },
+  },
   "Ser kozi twardy": {
     "kcal": 3.67,
     "protein": 0.21,
@@ -487,6 +479,22 @@
     "carbs": 0.00,
     "sat_fat": 0.19,
     "unsat_fat": 0.09
+  },
+  "Serek wiejski wysokobiałkowy Piątnica": {
+  "kcal": 0.93,
+  "protein": 0.14,
+  "fat": 0.03,
+  "carbs": 0.024,
+  "sat_fat": 0.02,
+  "unsat_fat": 0.01
+  },
+  "Serek wiejski wysokobiałkowy Piątnica": {
+  "kcal": 0.93,
+  "protein": 0.14,
+  "fat": 0.03,
+  "carbs": 0.024,
+  "sat_fat": 0.02,
+  "unsat_fat": 0.01
   },
   "Seler korzeniowy surowy": {
         "kcal": 0.42,
