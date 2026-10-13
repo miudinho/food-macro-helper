@@ -232,6 +232,14 @@
     "sat_fat": 0.013,
     "unsat_fat": 0.006
   },
+  "Kiełbasa śląska": {
+  "kcal": 1.76,
+  "protein": 0.207,
+  "fat": 0.104,
+  "carbs": 0.0,
+  "sat_fat": 0.0423,
+  "unsat_fat": 0.0519
+},
   "Kokosowy Krem Kara (24% tłuszczu)": {
     "kcal": 2.44,
     "protein": 0.027,
