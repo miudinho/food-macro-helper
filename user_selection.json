@@ -1,0 +1,26 @@
+{
+  "selected_products": [
+    "Ciecierzyca sucha",
+    "Dynia, łuskana",
+    "Awokado",
+    "Kokosowy Krem Kara (24% tłuszczu)",
+    "Makrela wędzona",
+    "Masło klarowane",
+    "Olej MCT",
+    "Orzechy nerkowca",
+    "Ryż basmati biały",
+    "Twaróg półtłusty"
+  ],
+  "amounts": {
+    "Ciecierzyca sucha": 220,
+    "Dynia, łuskana": 10,
+    "Awokado": 0,
+    "Kokosowy Krem Kara (24% tłuszczu)": 200,
+    "Makrela wędzona": 100,
+    "Masło klarowane": 5,
+    "Olej MCT": 5,
+    "Orzechy nerkowca": 10,
+    "Ryż basmati biały": 130,
+    "Twaróg półtłusty": 150
+  }
+}

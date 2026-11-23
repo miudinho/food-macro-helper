@@ -1,0 +1,24 @@
+services:
+  macro-diet-app:
+    build: .
+    image: macro-diet-app:latest
+    container_name: macro-diet-app
+    ports:
+      - "127.0.0.1:8501:8501"     # tylko localhost; wystaw przez reverse proxy z TLS
+    volumes:
+      - macro-data:/app/data      # SQLite + foods.json – przetrwa stop / rm kontenera
+    read_only: true               # rootfs tylko do odczytu
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 256
+    mem_limit: 512m
+    cpus: 1.0
+    restart: unless-stopped
+    stop_grace_period: 15s
+
+volumes:
+  macro-data:
+    name: macro-data
