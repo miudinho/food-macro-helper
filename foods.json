@@ -272,13 +272,22 @@
     "sat_fat": 0.01,
     "unsat_fat": 0.024
   },
-  "Makaron żytni suchy": {
-    "kcal": 3.4,
-    "protein": 0.12,
-    "fat": 0.02,
-    "carbs": 0.68,
-    "sat_fat": 0.003,
-    "unsat_fat": 0.014
+  "Makaron żytni ugotowany": {
+	"kcal": 1.43,
+	"protein": 0.05,
+	"fat": 0.0084,
+	"carbs": 0.286,
+	"sat_fat": 0.0013,
+	"unsat_fat": 0.0059
+  },
+  "Makaron pszenny ugotowany": {
+    "kcal": 1.55,
+    "protein": 0.058,
+    "fat": 0.009,
+    "carbs": 0.305,
+    "fiber": 0.02,
+    "sat_fat": 0.0018,
+    "unsat_fat": 0.0072
   },
   "Makrela wędzona": {
     "kcal": 2.21,
