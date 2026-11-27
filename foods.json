@@ -417,6 +417,15 @@
     "sat_fat": 0.033,
     "unsat_fat": 0.289
   },
+  "Otręby żytnie": {
+  "kcal": 2.81,
+  "protein": 0.15,
+  "fat": 0.043,
+  "carbs": 0.26,
+  "fiber": 0.39,
+  "sat_fat": 0.0059,
+  "unsat_fat": 0.0371
+  },
   "Papryka czerwona": {
     "kcal": 0.31,
     "protein": 0.01,

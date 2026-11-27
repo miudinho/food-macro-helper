@@ -9,6 +9,7 @@ Katalog /app/data jest wolumenem Dockera, więc dane przeżywają zatrzymanie ko
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import re
@@ -27,7 +28,13 @@ st.set_page_config(page_title="Macro Day Tracker", layout="wide")
 # ---------------------------------------------------------
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = db.DATA_DIR
-BUNDLED_FOODS = os.path.join(APP_DIR, "foods.json")          # z obrazu (seed)
+# Źródło (seed): foods.json z folderu uruchomienia (tam, gdzie leży start.sh).
+# Kolejność: MACRO_FOODS_SEED -> cwd/foods.json -> foods.json obok app.py.
+_CWD_FOODS = os.path.join(os.getcwd(), "foods.json")
+BUNDLED_FOODS = os.environ.get("MACRO_FOODS_SEED") or (
+    _CWD_FOODS if os.path.exists(_CWD_FOODS) else os.path.join(APP_DIR, "foods.json")
+)
+# Plik roboczy aplikacji (wolumen danych) – tu trafiają też produkty dodane w UI.
 FOODS_FILE = os.environ.get("MACRO_FOODS_FILE", os.path.join(DATA_DIR, "foods.json"))
 LEGACY_STATE_FILES = [
     os.path.join(DATA_DIR, "user_selection.json"),
@@ -54,13 +61,62 @@ FAT_E_RANGE = (20.0, 35.0)  # % energii – EFSA 20–35% (WHO: ≤ 30%)
 # ---------------------------------------------------------
 # BAZA PRODUKTÓW (foods.json)
 # ---------------------------------------------------------
+def _file_hash(path: str) -> str:
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
 def ensure_foods_file() -> None:
-    """Przy pierwszym starcie kopiuje foods.json z obrazu do wolumenu danych."""
+    """Seed + synchronizacja foods.json z obrazu do wolumenu danych.
+
+    Tryb (zmienna MACRO_FOODS_SYNC):
+      merge                 - po zmianie foods.json w obrazie dopisuje/nadpisuje
+                              produkty z obrazu, zachowuje produkty dodane w UI
+      overwrite (domyślnie) - po zmianie foods.json w obrazie wolumen jest zastępowany
+                  (kopia starego pliku do foods.json.bak)
+      off       - kopiuje tylko przy pierwszym starcie
+    """
     if os.path.abspath(FOODS_FILE) == os.path.abspath(BUNDLED_FOODS):
         return
-    if not os.path.exists(FOODS_FILE) and os.path.exists(BUNDLED_FOODS):
-        os.makedirs(os.path.dirname(FOODS_FILE), exist_ok=True)
+    if not os.path.exists(BUNDLED_FOODS):
+        return
+    os.makedirs(os.path.dirname(FOODS_FILE), exist_ok=True)
+    if not os.path.exists(FOODS_FILE):
         shutil.copyfile(BUNDLED_FOODS, FOODS_FILE)
+        with open(FOODS_FILE + ".seed_sha", "w") as f:
+            f.write(_file_hash(BUNDLED_FOODS))
+        return
+
+    mode = os.environ.get("MACRO_FOODS_SYNC", "overwrite").lower()
+    if mode == "off":
+        return
+    marker = FOODS_FILE + ".seed_sha"
+    bundled_hash = _file_hash(BUNDLED_FOODS)
+    try:
+        with open(marker) as f:
+            if f.read().strip() == bundled_hash:
+                return  # foods.json z obrazu bez zmian od ostatniej synchronizacji
+    except OSError:
+        pass
+
+    try:
+        if mode == "overwrite":
+            shutil.copyfile(FOODS_FILE, FOODS_FILE + ".bak")
+            shutil.copyfile(BUNDLED_FOODS, FOODS_FILE)
+        else:
+            with open(BUNDLED_FOODS, "r", encoding="utf-8") as f:
+                seed = json.load(f)
+            with open(FOODS_FILE, "r", encoding="utf-8") as f:
+                current = json.load(f)
+            if not isinstance(seed, dict) or not isinstance(current, dict):
+                raise ValueError("foods.json musi być obiektem JSON")
+            shutil.copyfile(FOODS_FILE, FOODS_FILE + ".bak")
+            current.update(seed)  # produkty z obrazu wygrywają
+            write_foods_atomic(dict(sorted(current.items(), key=lambda kv: kv[0].lower())))
+        with open(marker, "w") as f:
+            f.write(bundled_hash)
+    except Exception as e:  # noqa: BLE001
+        print(f"[foods] synchronizacja nieudana: {e}", flush=True)
 
 
 @st.cache_data
@@ -568,3 +624,4 @@ st.caption(
     "Udział ~1/3 SFA w tłuszczu wynika z relacji 10% E SFA / 30% E tłuszczu. "
     "Kalkulator ma charakter informacyjny, nie zastępuje porady dietetyka/lekarza."
 )
+
